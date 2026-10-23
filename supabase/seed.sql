@@ -27,30 +27,30 @@ ON CONFLICT (code) DO NOTHING;
 
 -- 4. Subjects
 INSERT INTO subjects (id, course_id, name, code, total_hours) VALUES
-  ('s0000000-0000-0000-0000-000000000001', 'c0000000-0000-0000-0000-000000000001', 'Physics (Mechanics & Electrodynamics)', 'PHY-JEE', 180),
-  ('s0000000-0000-0000-0000-000000000002', 'c0000000-0000-0000-0000-000000000001', 'Physical & Organic Chemistry', 'CHE-JEE', 180),
-  ('s0000000-0000-0000-0000-000000000003', 'c0000000-0000-0000-0000-000000000001', 'Higher Mathematics & Calculus', 'MAT-JEE', 190),
-  ('s0000000-0000-0000-0000-000000000004', 'c0000000-0000-0000-0000-000000000002', 'Botany & Zoology Biology', 'BIO-NEET', 210)
+  ('50000000-0000-0000-0000-000000000001', 'c0000000-0000-0000-0000-000000000001', 'Physics (Mechanics & Electrodynamics)', 'PHY-JEE', 180),
+  ('50000000-0000-0000-0000-000000000002', 'c0000000-0000-0000-0000-000000000001', 'Physical & Organic Chemistry', 'CHE-JEE', 180),
+  ('50000000-0000-0000-0000-000000000003', 'c0000000-0000-0000-0000-000000000001', 'Higher Mathematics & Calculus', 'MAT-JEE', 190),
+  ('50000000-0000-0000-0000-000000000004', 'c0000000-0000-0000-0000-000000000002', 'Botany & Zoology Biology', 'BIO-NEET', 210)
 ON CONFLICT DO NOTHING;
 
 -- 5. Teachers
 INSERT INTO teachers (id, profile_id, teacher_id, name, email, phone, specialization, qualification, joining_date, status) VALUES
-  ('t0000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000003', 'SPE-TCH-001', 'Prof. Ananya Sen', 'teacher.sharma@pinnakeedge.edu', '+91 98300 12345', 'Physics (Mechanics)', 'M.Tech IIT Kharagpur', '2021-04-10', 'active'),
-  ('t0000000-0000-0000-0000-000000000002', NULL, 'SPE-TCH-002', 'Dr. Vivek Bhattacharya', 'vivek.bhatt@pinnakeedge.edu', '+91 98210 54321', 'Organic Chemistry', 'Ph.D Delhi University', '2020-06-15', 'active'),
-  ('t0000000-0000-0000-0000-000000000003', NULL, 'SPE-TCH-003', 'Er. Ramanujam Iyer', 'ramanujam.iyer@pinnakeedge.edu', '+91 97410 88990', 'Higher Mathematics', 'B.Tech IIT Madras', '2019-08-01', 'active'),
-  ('t0000000-0000-0000-0000-000000000004', NULL, 'SPE-TCH-004', 'Dr. Meenakshi Sundaram', 'meenakshi.s@pinnakeedge.edu', '+91 98450 77665', 'Biology & Physiology', 'AIIMS Alumna', '2022-01-12', 'active')
+  ('70000000-0000-0000-0000-000000000001', 'a0000000-0000-0000-0000-000000000003', 'SPE-TCH-001', 'Prof. Ananya Sen', 'teacher.sharma@pinnakeedge.edu', '+91 98300 12345', 'Physics (Mechanics)', 'M.Tech IIT Kharagpur', '2021-04-10', 'active'),
+  ('70000000-0000-0000-0000-000000000002', NULL, 'SPE-TCH-002', 'Dr. Vivek Bhattacharya', 'vivek.bhatt@pinnakeedge.edu', '+91 98210 54321', 'Organic Chemistry', 'Ph.D Delhi University', '2020-06-15', 'active'),
+  ('70000000-0000-0000-0000-000000000003', NULL, 'SPE-TCH-003', 'Er. Ramanujam Iyer', 'ramanujam.iyer@pinnakeedge.edu', '+91 97410 88990', 'Higher Mathematics', 'B.Tech IIT Madras', '2019-08-01', 'active'),
+  ('70000000-0000-0000-0000-000000000004', NULL, 'SPE-TCH-004', 'Dr. Meenakshi Sundaram', 'meenakshi.s@pinnakeedge.edu', '+91 98450 77665', 'Biology & Physiology', 'AIIMS Alumna', '2022-01-12', 'active')
 ON CONFLICT (teacher_id) DO NOTHING;
 
 -- 6. Batches
 INSERT INTO batches (id, course_id, name, academic_session, capacity, start_date, end_date, status, room_number, coordinator_teacher_id) VALUES
-  ('b0000000-0000-0000-0000-000000000001', 'c0000000-0000-0000-0000-000000000001', 'Batch A1 - Morning Super 30 (JEE)', '2026-2027', 35, '2026-04-01', '2027-03-31', 'active', 'Room 201 - Ramanujan Hall', 't0000000-0000-0000-0000-000000000001'),
-  ('b0000000-0000-0000-0000-000000000002', 'c0000000-0000-0000-0000-000000000001', 'Batch A2 - Evening Pinnacle (JEE)', '2026-2027', 35, '2026-04-01', '2027-03-31', 'active', 'Room 202 - Aryabhata Wing', 't0000000-0000-0000-0000-000000000002'),
-  ('b0000000-0000-0000-0000-000000000003', 'c0000000-0000-0000-0000-000000000002', 'Batch B1 - Morning Doctors Squad (NEET)', '2026-2027', 40, '2026-04-01', '2027-03-31', 'active', 'Room 101 - Sushruta Block', 't0000000-0000-0000-0000-000000000004')
+  ('b0000000-0000-0000-0000-000000000001', 'c0000000-0000-0000-0000-000000000001', 'Batch A1 - Morning Super 30 (JEE)', '2026-2027', 35, '2026-04-01', '2027-03-31', 'active', 'Room 201 - Ramanujan Hall', '70000000-0000-0000-0000-000000000001'),
+  ('b0000000-0000-0000-0000-000000000002', 'c0000000-0000-0000-0000-000000000001', 'Batch A2 - Evening Pinnacle (JEE)', '2026-2027', 35, '2026-04-01', '2027-03-31', 'active', 'Room 202 - Aryabhata Wing', '70000000-0000-0000-0000-000000000002'),
+  ('b0000000-0000-0000-0000-000000000003', 'c0000000-0000-0000-0000-000000000002', 'Batch B1 - Morning Doctors Squad (NEET)', '2026-2027', 40, '2026-04-01', '2027-03-31', 'active', 'Room 101 - Sushruta Block', '70000000-0000-0000-0000-000000000004')
 ON CONFLICT DO NOTHING;
 
 -- 7. Teacher Assignments
 INSERT INTO teacher_assignments (teacher_id, course_id, subject_id, batch_id) VALUES
-  ('t0000000-0000-0000-0000-000000000001', 'c0000000-0000-0000-0000-000000000001', 's0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001')
+  ('70000000-0000-0000-0000-000000000001', 'c0000000-0000-0000-0000-000000000001', '50000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001')
 ON CONFLICT DO NOTHING;
 
 -- 8. Demo Student
@@ -60,22 +60,22 @@ ON CONFLICT (student_id) DO NOTHING;
 
 -- 9. Sample Attendance for Demo Student
 INSERT INTO attendance_records (student_id, batch_id, date, status, marked_by_teacher_id) VALUES
-  ('d0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001', '2026-10-15', 'present', 't0000000-0000-0000-0000-000000000001'),
-  ('d0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001', '2026-10-16', 'present', 't0000000-0000-0000-0000-000000000001'),
-  ('d0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001', '2026-10-17', 'present', 't0000000-0000-0000-0000-000000000001'),
-  ('d0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001', '2026-10-18', 'present', 't0000000-0000-0000-0000-000000000001')
+  ('d0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001', '2026-10-15', 'present', '70000000-0000-0000-0000-000000000001'),
+  ('d0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001', '2026-10-16', 'present', '70000000-0000-0000-0000-000000000001'),
+  ('d0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001', '2026-10-17', 'present', '70000000-0000-0000-0000-000000000001'),
+  ('d0000000-0000-0000-0000-000000000001', 'b0000000-0000-0000-0000-000000000001', '2026-10-18', 'present', '70000000-0000-0000-0000-000000000001')
 ON CONFLICT DO NOTHING;
 
 -- 10. Sample Invoice & Payment
 INSERT INTO invoices (id, invoice_number, student_id, student_name, course_id, academic_session, fee_description, total_amount, discount_amount, amount_paid, outstanding_balance, due_date, status) VALUES
-  ('i0000000-0000-0000-0000-000000000001', 'INV-2026-0001', 'd0000000-0000-0000-0000-000000000001', 'Aarav Patel', 'c0000000-0000-0000-0000-000000000001', '2026-2027', 'Annual Tuition Fee - Term 1', 72500, 5000, 67500, 0, '2026-02-15', 'paid')
+  ('10000000-0000-0000-0000-000000000001', 'INV-2026-0001', 'd0000000-0000-0000-0000-000000000001', 'Aarav Patel', 'c0000000-0000-0000-0000-000000000001', '2026-2027', 'Annual Tuition Fee - Term 1', 72500, 5000, 67500, 0, '2026-02-15', 'paid')
 ON CONFLICT (invoice_number) DO NOTHING;
 
 INSERT INTO payments (id, receipt_number, invoice_id, invoice_number, student_id, student_name, payment_date, amount, payment_method, reference_number, recorded_by, status) VALUES
-  ('p0000000-0000-0000-0000-000000000001', 'REC-2026-0001', 'i0000000-0000-0000-0000-000000000001', 'INV-2026-0001', 'd0000000-0000-0000-0000-000000000001', 'Aarav Patel', '2026-01-15', 67500, 'upi', 'UPI/AXIS/401582910482', 'Principal Office', 'verified')
+  ('20000000-0000-0000-0000-000000000001', 'REC-2026-0001', '10000000-0000-0000-0000-000000000001', 'INV-2026-0001', 'd0000000-0000-0000-0000-000000000001', 'Aarav Patel', '2026-01-15', 67500, 'upi', 'UPI/AXIS/401582910482', 'Principal Office', 'verified')
 ON CONFLICT (receipt_number) DO NOTHING;
 
 -- 11. Sample Announcement
 INSERT INTO announcements (id, title, content, author_name, author_role, target_audience, priority) VALUES
-  ('an000000-0000-0000-0000-000000000001', 'Welcome to Shri PinnakeEdge Smart LMS', 'Official digital portal is live for all teachers and students. Check your timetable and course modules.', 'Dr. Rajeshwar Sharma', 'Principal', 'all', 'important')
+  ('0a000000-0000-0000-0000-000000000001', 'Welcome to Shri PinnakeEdge Smart LMS', 'Official digital portal is live for all teachers and students. Check your timetable and course modules.', 'Dr. Rajeshwar Sharma', 'Principal', 'all', 'important')
 ON CONFLICT DO NOTHING;
